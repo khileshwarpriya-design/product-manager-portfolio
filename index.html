@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khileshwar Kumar Priya — AI Product Manager</title>
+<style>
+:root { color-scheme: light dark; --bg: light-dark(#f7f8fa,#0c1118); --surface: light-dark(#ffffff,#141c26); --surface-2: light-dark(#eef2f6,#1b2633); --text: light-dark(#152033,#f1f5f9); --muted: light-dark(#5d6b7d,#a6b4c5); --line: light-dark(#dfe5ec,#2b3847); --accent: light-dark(#315ee8,#8ca8ff); --accent-soft: light-dark(#e8edff,#202f56); --green: light-dark(#15745b,#72d9b5); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+#app { background-color: var(--bg); min-height: 100vh; }
+.shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: light-dark(rgba(247,248,250,.9),rgba(12,17,24,.9)); backdrop-filter: blur(16px); }
+.nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -.03em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; color: white; background: #315ee8; font-size: 13px; letter-spacing: 0; }
+.navlinks { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 13px; font-weight: 650; }
+.navlinks a:hover, .text-link:hover { color: var(--accent); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 11px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 700; font-size: 13px; transition: transform .18s, border-color .18s; cursor: pointer; }
+.button:hover { transform: translateY(-1px); border-color: var(--accent); }
+.button.primary { background: #315ee8; border-color: #315ee8; color: #fff; }
+.hero { padding: 82px 0 68px; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(270px,.65fr); gap: 56px; align-items: center; }
+.eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: 800; }
+h1 { margin: 15px 0 18px; font-size: clamp(38px,6vw,66px); letter-spacing: -.065em; line-height: 1.04; max-width: 760px; }
+.gradient { color: var(--accent); }
+.lede { font-size: 17px; color: var(--muted); max-width: 640px; line-height: 1.75; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+.proofline { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 27px; font-size: 12px; color: var(--muted); }
+.proofline span:before { content: '•'; color: var(--green); margin-right: 7px; }
+.profile-card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; box-shadow: 0 20px 55px light-dark(rgba(31,50,80,.07),rgba(0,0,0,.15)); }
+.profile-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.avatar { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 18px; font-weight: 800; }
+.small-muted { color: var(--muted); font-size: 12px; }
+.profile-card h3 { margin: 0; font-size: 15px; }
+.profile-card p { margin: 3px 0 0; }
+.profile-focus { display: grid; gap: 10px; }
+.focus-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px; background: var(--surface-2); border-radius: 12px; }
+.focus-icon { color: var(--accent); font-size: 17px; width: 24px; text-align: center; }
+.focus-row strong { display: block; font-size: 13px; }
+.focus-row small { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.metrics { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; }
+.metric-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.metric { padding: 8px 18px; border-left: 1px solid var(--line); }
+.metric:first-child { border-left: 0; }
+.metric strong { display: block; font-size: clamp(25px,3vw,34px); letter-spacing: -.05em; line-height: 1.2; }
+.metric span { display: block; font-size: 12px; color: var(--muted); margin-top: 8px; max-width: 180px; }
+section { padding: 76px 0; scroll-margin-top: 70px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+h2 { margin: 8px 0 0; font-size: clamp(27px,4vw,40px); line-height: 1.12; letter-spacing: -.045em; }
+.section-intro { max-width: 550px; color: var(--muted); font-size: 14px; margin: 13px 0 0; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform .2s,border-color .2s; }
+.project:hover { transform: translateY(-3px); border-color: light-dark(#aab9f5,#526cae); }
+.project-top { padding: 22px 22px 14px; display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+.project-number { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.pill { border: 1px solid var(--line); border-radius: 100px; padding: 4px 9px; font-size: 10px; font-weight: 750; color: var(--muted); white-space: nowrap; }
+.project-body { padding: 0 22px 22px; }
+.project h3 { margin: 5px 0 9px; font-size: 21px; letter-spacing: -.03em; line-height: 1.25; }
+.project p { margin: 0; font-size: 13px; color: var(--muted); }
+.impact { display: flex; gap: 9px; align-items: baseline; padding: 14px 0 12px; margin-top: 14px; border-top: 1px solid var(--line); }
+.impact strong { font-size: 21px; color: var(--green); letter-spacing: -.04em; }
+.impact span { font-size: 11px; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
+.tag { padding: 5px 8px; border-radius: 7px; background: var(--surface-2); font-size: 10px; color: var(--muted); }
+.details { padding: 0 22px 20px; }
+.details summary { color: var(--accent); cursor: pointer; font-size: 12px; font-weight: 750; list-style: none; }
+.details summary::-webkit-details-marker { display:none; }
+.details summary:after { content: '＋'; float: right; }
+.details[open] summary:after { content: '−'; }
+.detail-content { border-top: 1px solid var(--line); margin-top: 13px; padding-top: 13px; }
+.detail-content h4 { margin: 12px 0 4px; font-size: 12px; }
+.detail-content p, .detail-content li { font-size: 12px; color: var(--muted); }
+.detail-content ul { padding-left: 17px; margin: 6px 0; }
+.callout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 28px; padding: 28px; border-radius: 20px; border: 1px solid var(--line); background: var(--surface); margin-top: 18px; }
+.callout h3 { margin: 0; font-size: 22px; letter-spacing: -.04em; }
+.callout p { margin: 0; color: var(--muted); font-size: 13px; }
+.process { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 26px; }
+.process-card { padding: 17px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.process-card span { font-size: 10px; color: var(--accent); font-weight: 800; letter-spacing: .1em; }
+.process-card h3 { font-size: 14px; margin: 8px 0 5px; }
+.process-card p { color: var(--muted); font-size: 11px; margin: 0; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.panel { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); padding: 24px; }
+.panel h3 { margin: 0 0 13px; font-size: 18px; letter-spacing: -.03em; }
+.panel p { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.bullet-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+.bullet-list li { display: flex; gap: 10px; font-size: 12px; color: var(--muted); }
+.bullet-list li:before { content: '↗'; color: var(--accent); font-weight: 800; }
+.experience { display: grid; grid-template-columns: 145px 1fr; gap: 22px; padding: 22px 0; border-top: 1px solid var(--line); }
+.experience:first-of-type { border-top: 0; }
+.experience time { color: var(--muted); font-size: 11px; font-weight: 700; }
+.experience h3 { margin: 0 0 4px; font-size: 16px; }
+.experience p { margin: 0; color: var(--muted); font-size: 12px; }
+.writing-links { display: grid; gap: 10px; }
+.writing-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 16px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; font-size: 13px; font-weight: 650; }
+.writing-link span { color: var(--muted); font-size: 11px; font-weight: 500; }
+.writing-link:hover { border-color: var(--accent); }
+.contact { padding: 35px; border-radius: 22px; background: var(--accent-soft); display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.contact h2 { font-size: clamp(26px,4vw,38px); }
+.contact p { color: var(--muted); font-size: 13px; max-width: 570px; }
+footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.note { font-size: 10px; color: var(--muted); margin-top: 18px; }
+@media(max-width:800px) { .hero { grid-template-columns: 1fr; gap: 30px; padding-top: 56px; } .profile-card { max-width: 560px; } .metric-grid { grid-template-columns: repeat(2,1fr); } .metric:nth-child(3) { border-left: 0; } .grid,.split { grid-template-columns: 1fr; } .callout { grid-template-columns: 1fr; gap: 12px; } .process { grid-template-columns: repeat(2,1fr); } .navlinks { gap: 12px; } }
+@media(max-width:560px) { .shell { width: min(100% - 28px,1120px); } .nav { min-height: 60px; } .navlinks a:not(.nav-contact) { display: none; } .hero { padding: 44px 0; } .lede { font-size: 15px; } section { padding: 54px 0; } .section-head { display: block; } .metric { padding: 8px 10px; } .project-top,.project-body,.details { padding-left: 17px; padding-right: 17px; } .process { grid-template-columns: 1fr 1fr; } .experience { grid-template-columns: 1fr; gap: 5px; } .contact { padding: 24px; display: block; } .contact .button { margin-top: 8px; } }
+</style>
+</head>
+<body>
+<div id="app">
+<header class="topbar"><div class="shell nav">
+<a class="brand" href="#home" aria-label="Go to home"><span class="brand-mark">KP</span><span>Khileshwar Kumar Priya</span></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#work">Case studies</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#writing">Writing</a><a class="button nav-contact" href="#contact">Contact ↗</a></nav>
+</div></header>
+<main>
+<section class="shell hero" id="home">
+<div>
+<div class="eyebrow">AI Product Manager · Technical Product Thinking</div>
+<h1>Turning complex workflows into <span class="gradient">useful AI products.</span></h1>
+<p class="lede">I’m a product manager with a background in enterprise SaaS, platform integrations, automation, and hands-on AI experimentation. I focus on connecting real user problems with practical technology and measurable outcomes.</p>
+<div class="hero-actions"><a class="button primary" href="#work">Explore case studies <span>↘</span></a><a class="button" href="https://www.linkedin.com/in/khileshwar-kumar-priya/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+<div class="proofline"><span>Enterprise B2B SaaS</span><span>AI & workflow automation</span><span>Platform strategy</span></div>
+</div>
+<aside class="profile-card">
+<div class="profile-head"><div class="avatar">KP</div><div><h3>Product, technology & outcomes</h3><p class="small-muted">Experience across product and engineering</p></div></div>
+<div class="profile-focus">
+<div class="focus-row"><div class="focus-icon">✳</div><div><strong>AI product delivery</strong><small>LLM-enabled workflows, support automation, RAG-based assistance</small></div></div>
+<div class="focus-row"><div class="focus-icon">⌘</div><div><strong>Platform & integrations</strong><small>APIs, developer experience, enterprise workflows</small></div></div>
+<div class="focus-row"><div class="focus-icon">↗</div><div><strong>Outcome-led execution</strong><small>Prioritization, product analytics, stakeholder alignment</small></div></div>
+</div>
+<p class="note">Professional experience and independent learning projects are labelled separately throughout this portfolio.</p>
+</aside>
+</section>
+<div class="metrics"><div class="shell metric-grid">
+<div class="metric"><strong>₹25L/mo</strong><span>Reported infrastructure-cost reduction from API rate-limit pricing</span></div>
+<div class="metric"><strong>1 week → hours</strong><span>Reported tenant onboarding time with AI Admin Assistant</span></div>
+<div class="metric"><strong>500+</strong><span>Developers reached through API Playground</span></div>
+<div class="metric"><strong>39 → 64</strong><span>NPS movement reported over three years</span></div>
+</div></div>
+<section class="shell" id="work">
+<div class="section-head"><div><div class="eyebrow">Selected work</div><h2>Product case studies</h2><p class="section-intro">A selection of enterprise product initiatives. Expand each case study to see the problem framing, product decisions, and outcomes to validate and explain in an interview.</p></div></div>
+<div class="grid">
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 01</span><span class="pill">Professional work</span></div><div class="project-body"><h3>AI-powered Admin Assistant</h3><p>Reduce repetitive HR platform configuration work and help teams onboard tenants faster through AI-assisted administration.</p><div class="impact"><strong>1 week → hours</strong><span>reported tenant onboarding time</span></div><div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Workflow design</span><span class="tag">Enterprise SaaS</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>Tenant onboarding and HRIS configuration can involve repetitive setup steps, manual knowledge retrieval, and coordination across teams.</p><h4>Product approach</h4><ul><li>Delivered an AI-powered Admin Assistant using LLMs and retrieval-augmented generation, as described in the resume.</li><li>Focused on shortening the path from configuration intent to completion.</li><li>Product considerations include permission-aware actions, confirmation for consequential changes, clear failure states, and an auditable trail.</li></ul><h4>Reported outcome</h4><p>Tenant onboarding moved from approximately one week to a few hours. Confirm the measurement period, baseline, sample size, and which part of onboarding was included before publishing this as a fully evidenced metric.</p><h4>Interview discussion</h4><p>Explain the user journey, where retrieval helps, how correctness is checked, when human approval is required, and how you would measure task completion and configuration errors.</p></div></details></article>
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 02</span><span class="pill">Professional work</span></div><div class="project-body"><h3>AI-driven support automation</h3><p>Use AI to accelerate support workflows and reduce the time teams spend on repetitive investigation and resolution tasks.</p><div class="impact"><strong>Days → minutes</strong><span>reported manual support effort / resolution workflow</span></div><div class="tags"><span class="tag">AI automation</span><span class="tag">Support operations</span><span class="tag">Human-in-the-loop</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>Support processes can involve manual triage, repeated information gathering, and multi-step investigation before a useful resolution is available.</p><h4>Product approach</h4><ul><li>Built AI-driven support automation, according to the resume.</li><li>Frame the workflow around intent classification, relevant context retrieval, suggested resolution, and escalation when confidence is low.</li><li>Important safeguards include access controls, grounded responses, traceability, and a clear route to a human agent.</li></ul><h4>Reported outcome</h4><p>The resume states manual support effort reduced from five days to minutes. Validate whether this represents elapsed resolution time, hands-on effort, or a subset of cases before using the figure externally.</p><h4>Metrics to discuss</h4><p>Time to resolution, deflection rate, first-contact resolution, answer acceptance, escalation rate, and incorrect-answer rate.</p></div></details></article>
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 03</span><span class="pill">Professional work</span></div><div class="project-body"><h3>API Integration Framework</h3><p>Make enterprise integrations more repeatable and reduce the effort needed to connect customer systems to the HR platform.</p><div class="impact"><strong>15 person-days</strong><span>reported integration effort saved; resume cites 150+ clients</span></div><div class="tags"><span class="tag">Platform PM</span><span class="tag">API strategy</span><span class="tag">B2B SaaS</span><span class="tag">Developer experience</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>Enterprise integration projects can require repeated discovery, implementation coordination, testing, and troubleshooting across multiple systems.</p><h4>Product approach</h4><ul><li>Designed and launched an API Integration Framework.</li><li>Portfolio story should cover supported integration patterns, authentication, pagination, filters, auditability, incremental versus full loads, and developer documentation where these were part of the delivered scope.</li><li>Describe how you partnered with engineering, implementation, support, and customer-facing teams.</li></ul><h4>Reported outcome</h4><p>15 person-days saved in integration effort; resume references 150+ clients. Clearly define whether the saving is per integration, project, or aggregated across clients.</p><h4>Metrics to discuss</h4><p>Time to first successful API call, integration lead time, error rate, support tickets per integration, and reuse of standard patterns.</p></div></details></article>
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 04</span><span class="pill">Professional work</span></div><div class="project-body"><h3>API Playground</h3><p>Improve API discovery and testing for developers and solutioning teams before they commit to an integration.</p><div class="impact"><strong>500+ / +30%</strong><span>developers reached / reported faster solutioning</span></div><div class="tags"><span class="tag">Developer tools</span><span class="tag">Product adoption</span><span class="tag">UX</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>Developers need a faster way to understand available endpoints, try requests, and validate API behavior before implementation.</p><h4>Product approach</h4><ul><li>Launched an API Playground to support API exploration and testing.</li><li>Tell the story through a developer journey: discover endpoint, authenticate, configure request, inspect response, and move toward implementation.</li><li>Explain how access control and test-environment data were handled.</li></ul><h4>Reported outcome</h4><p>500+ developers reached and solutioning speed improved by 30%, according to the resume. Add the measurement method and time period if available.</p><h4>Metrics to discuss</h4><p>Activation, repeat usage, successful requests, time to first success, and conversion from exploration to integration.</p></div></details></article>
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 05</span><span class="pill">Professional work</span></div><div class="project-body"><h3>API rate-limit pricing</h3><p>Balance API consumption, platform reliability, and commercial value through a usage-based rate-limit pricing model.</p><div class="impact"><strong>₹25L/month</strong><span>reported infrastructure-cost reduction</span></div><div class="tags"><span class="tag">Monetization</span><span class="tag">Pricing</span><span class="tag">Platform economics</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>High or unpredictable API usage can create infrastructure costs and capacity-management challenges.</p><h4>Product approach</h4><ul><li>Designed an API rate-limit pricing model.</li><li>Describe how tiers, usage limits, customer segments, and operational constraints were considered.</li><li>Show how the product balances customer experience with fair usage and platform stability.</li></ul><h4>Reported outcome</h4><p>₹25 lakh per month in infrastructure-cost reduction, as stated in the resume. Validate the attribution and distinguish cost avoided from realized savings.</p><h4>Metrics to discuss</h4><p>Cost per API call, usage distribution, throttling rate, customer upgrade/downgrade patterns, and service reliability.</p></div></details></article>
+<article class="project"><div class="project-top"><span class="project-number">CASE STUDY 06</span><span class="pill">Professional work</span></div><div class="project-body"><h3>Customer experience improvement</h3><p>Use customer feedback and product insights to prioritize improvements across the enterprise platform.</p><div class="impact"><strong>39 → 64</strong><span>reported NPS over three years (+65%, as stated)</span></div><div class="tags"><span class="tag">Customer insights</span><span class="tag">Prioritization</span><span class="tag">Product analytics</span></div></div><details class="details"><summary>Explore the case study</summary><div class="detail-content"><h4>Problem</h4><p>Customer satisfaction improvements require translating feedback into a prioritized and measurable product action plan.</p><h4>Product approach</h4><ul><li>Led NPS analysis and strategic improvement initiatives, according to the resume.</li><li>Explain how feedback themes were categorized, validated with other signals, and translated into roadmap choices.</li><li>Connect changes to adoption, support trends, and customer outcomes without claiming sole ownership of cross-team results.</li></ul><h4>Reported outcome</h4><p>NPS increased from 39 to 64 over three years; resume describes this as a 65% improvement. NPS is usually reported as a point change (25 points here), so explain the calculation if retaining the percentage.</p></div></details></article>
+</div>
+<div class="callout"><h3>How I think about AI product quality</h3><p>AI is valuable when it reliably helps a user complete a meaningful task—not simply when a model produces a fluent answer. My product lens includes task success, time saved, factual grounding, user trust, privacy, escalation paths, and operational cost.</p></div>
+</section>
+<section id="approach" style="background:var(--surface-2)"><div class="shell">
+<div class="eyebrow">My product approach</div><h2>From user problem to measurable outcome</h2><p class="section-intro">A practical approach for AI and platform products: start with the job to be done, validate the workflow, then evaluate the outcome and its risks.</p>
+<div class="process">
+<div class="process-card"><span>01 / DISCOVER</span><h3>Understand the user</h3><p>Interview users and stakeholders, map the workflow, inspect support themes, and establish the baseline.</p></div>
+<div class="process-card"><span>02 / DEFINE</span><h3>Choose the right problem</h3><p>Set a clear problem statement, success metric, non-goals, and a prioritized MVP scope.</p></div>
+<div class="process-card"><span>03 / DELIVER</span><h3>Build with guardrails</h3><p>Partner with design and engineering on requirements, testing, rollout, permissions, and failure handling.</p></div>
+<div class="process-card"><span>04 / LEARN</span><h3>Measure and iterate</h3><p>Track adoption, task success, quality, time saved, customer feedback, and unintended outcomes.</p></div>
+</div>
+<div class="split" style="margin-top:22px">
+<div class="panel"><h3>AI-specific considerations</h3><ul class="bullet-list"><li>Ground responses in trusted context; make uncertainty visible.</li><li>Use human approval for consequential or irreversible actions.</li><li>Measure quality and failure cases, not just response speed.</li><li>Protect customer data and respect role-based permissions.</li></ul></div>
+<div class="panel"><h3>Product management strengths</h3><ul class="bullet-list"><li>Product requirements, user stories, backlog prioritization, and roadmap planning.</li><li>Cross-functional execution with engineering, design, QA, and business teams.</li><li>API and platform product thinking with enterprise constraints.</li><li>Analytics-led decisions, customer feedback, launch enablement, and GTM.</li></ul></div>
+</div></div></section>
+<section class="shell" id="about"><div class="section-head"><div><div class="eyebrow">Background</div><h2>Product experience with a technical foundation</h2><p class="section-intro">Enterprise product delivery, software engineering, and business education inform how I evaluate customer problems and technical trade-offs.</p></div></div>
+<div class="panel">
+<div class="experience"><time>Apr 2022 – Jan 2026</time><div><h3>Product Manager / Product Analyst — Platform & Integration</h3><p><strong>PeopleStrong Technologies · B2B SaaS</strong><br>Product roadmap and delivery across platform integrations, API developer experience, workflow and admin capabilities, AI-assisted workflows, product analytics, and go-to-market enablement.</p></div></div>
+<div class="experience"><time>Sep 2021 – Mar 2022</time><div><h3>Intern — Sustainability / Regulatory Research</h3><p><strong>EY, Gurugram</strong><br>Analysed challenges, gaps, impacts, and overlaps across SFDR, EU Taxonomy, and CSRD regulations.</p></div></div>
+<div class="experience"><time>Jun 2015 – Jun 2020</time><div><h3>Technology Analyst</h3><p><strong>Infosys</strong><br>Worked with global banking clients on process management, migration, optimization, and automation. Resume reports a Blue Prism automation initiative that saved around 10 hours per week and reduced manual effort by approximately 50%.</p></div></div>
+<div class="experience"><time>2020 – 2022</time><div><h3>MBA</h3><p><strong>Indian Institute of Management Lucknow</strong></p></div></div>
+<div class="experience"><time>2011 – 2015</time><div><h3>B.Tech — Electronics & Communication Engineering</h3><p><strong>Birla Institute of Technology, Mesra</strong></p></div></div>
+</div>
+<p class="note">Role dates and reported results are based on the resume available for this portfolio. Please confirm details and wording before publishing.</p>
+</section>
+<section style="background:var(--surface-2)" id="independent"><div class="shell"><div class="section-head"><div><div class="eyebrow">Independent project</div><h2>AI Product Manager Assistant</h2><p class="section-intro">A hands-on learning project exploring how an AI assistant can support product-management tasks. This is intentionally separate from professional work delivered at PeopleStrong.</p></div><span class="pill">Personal experiment · In progress</span></div>
+<div class="split"><div class="panel"><h3>What I’m building</h3><p>A conversational assistant with a simple Streamlit interface, an agent workflow, and tool-calling experiments to learn how AI systems can move beyond one-shot chat.</p><div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">LangGraph</span><span class="tag">Groq</span><span class="tag">Tool calling</span></div></div><div class="panel"><h3>What this project demonstrates</h3><ul class="bullet-list"><li>Learning by building and iterating on a working interface.</li><li>Thinking about assistant workflows, tool selection, and conversation state.</li><li>Identifying limitations and opportunities for reliability, memory, and UX.</li><li>Applying a product lens to a technical prototype.</li></ul><p class="note">Status: independent learning project. Do not interpret as a shipped commercial product or customer-validated solution.</p></div></div>
+</div></section>
+<section class="shell" id="writing"><div class="section-head"><div><div class="eyebrow">Writing & product thinking</div><h2>Ideas beyond the roadmap</h2><p class="section-intro">Public articles related to enterprise integration and platform capabilities.</p></div></div>
+<div class="writing-links"><a class="writing-link" href="https://www.peoplestrong.com/blog/orchestration-layer-in-hr-tech-integration/" target="_blank" rel="noreferrer"><div>Orchestration Layer in HR Tech Integration<br><span>Enterprise integrations · Platform thinking</span></div><strong>↗</strong></a><a class="writing-link" href="https://www.peoplestrong.com/blog/hrms-audit-log/" target="_blank" rel="noreferrer"><div>HRMS Audit Log<br><span>Traceability · Enterprise workflows</span></div><strong>↗</strong></a><a class="writing-link" href="https://www.peoplestrong.com/blog/hrms-integration-with-webhooks/" target="_blank" rel="noreferrer"><div>HRMS Integration with Webhooks<br><span>Event-driven integrations · Developer experience</span></div><strong>↗</strong></a><a class="writing-link" href="https://www.linkedin.com/in/khileshwar-kumar-priya/" target="_blank" rel="noreferrer"><div>LinkedIn profile<br><span>Professional updates and product work</span></div><strong>↗</strong></a></div>
+</section>
+<section class="shell" id="contact"><div class="contact"><div><div class="eyebrow">Let’s connect</div><h2>Building useful AI products?</h2><p>I’m interested in AI Product Manager opportunities where customer problems, product strategy, technical collaboration, and responsible AI meet.</p></div><div style="display:flex;flex-wrap:wrap;gap:10px"><a class="button primary" href="https://www.linkedin.com/in/khileshwar-kumar-priya/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a><button class="button" id="copyEmail" type="button">Copy email</button></div></div><p class="note" id="copyStatus" aria-live="polite">Email: khileshwar.priya@iiml.org · Update this contact detail if you prefer a different public email.</p></section>
+</main>
+<footer><div class="shell footer-inner"><span>© <span id="year"></span> Khileshwar Kumar Priya</span><span>AI Product Management · Platform thinking · Measurable outcomes</span></div></footer>
+</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('copyEmail').addEventListener('click', async function(){
+  const email = 'khileshwar.priya@iiml.org';
+  const status = document.getElementById('copyStatus');
+  try { await navigator.clipboard.writeText(email); status.textContent = 'Email copied: ' + email; }
+  catch (e) { status.textContent = 'Email: ' + email + ' — copy it manually if clipboard access is unavailable.'; }
+});
+</script>
+</body>
+</html>
